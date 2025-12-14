@@ -1,6 +1,11 @@
 # AI Feedback System - Two-Dashboard Application
 
-A web-based feedback system with separate User and Admin dashboards, powered by AI for intelligent responses, summaries, and recommendations.
+🌟 **Live demo & dashboards linked below!** 🌟
+
+## Live Demo
+
+- **User Dashboard:** [https://ai-feedback-system-lavl.onrender.com/](https://ai-feedback-system-lavl.onrender.com/)
+- **Admin Dashboard:** [https://ai-feedback-system-lavl.onrender.com/admin](https://ai-feedback-system-lavl.onrender.com/admin)
 
 ## Features
 
@@ -49,9 +54,11 @@ MONGODB_URI=your_mongodb_connection_string
 3. Copy it to your `.env` file
 
 **To get MongoDB connection string:**
-1. See [MONGODB_SETUP.md](MONGODB_SETUP.md) for detailed instructions
-2. Or follow quick steps in [MONGODB_STEPS_SUMMARY.md](MONGODB_STEPS_SUMMARY.md)
-3. MongoDB Atlas free tier is sufficient for this project
+1. Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) and create a Free M0 cluster
+2. Create a user and database
+3. Allow Network Access from anywhere (0.0.0.0/0)
+4. Copy the connection string from the Atlas UI
+5. Full steps: See your MongoDB dashboard for details
 
 ### 3. Run the Application
 
@@ -148,37 +155,18 @@ Get analytics statistics.
 3. Connect your GitHub repository
 4. Set build command: `pip install -r requirements.txt`
 5. Set start command: `gunicorn app:app`
-6. Add environment variable: `GEMINI_API_KEY=your_key`
+6. Add environment variables:
+   - `GEMINI_API_KEY=your_key`
+   - `MONGODB_URI=your_connection_string`
 7. Deploy!
 
-### Option 2: Heroku
-
-1. Install Heroku CLI
-2. Create `Procfile`:
-   ```
-   web: gunicorn app:app
-   ```
-3. Deploy:
-   ```bash
-   heroku create your-app-name
-   heroku config:set GEMINI_API_KEY=your_key
-   git push heroku main
-   ```
-
-### Option 3: Vercel (with serverless functions)
-
-Note: Requires adaptation to Vercel's serverless architecture.
-
-### Option 4: HuggingFace Spaces
-
-1. Create a new Space
-2. Upload your files
-3. Configure environment variables
-4. Deploy
+### Other Options
+- Heroku, Railway, HuggingFace Spaces (see their docs)
 
 ## Environment Variables
 
 - `GEMINI_API_KEY`: Your Google Gemini API key (required for AI features)
+- `MONGODB_URI`: Your MongoDB Atlas connection string (cloud database)
 
 ## Notes
 
@@ -187,6 +175,12 @@ Note: Requires adaptation to Vercel's serverless architecture.
 - Auto-refresh on admin dashboard is set to 5 seconds. Adjust in `admin_dashboard.html` if needed
 - The application gracefully handles missing API keys (falls back to default responses)
 - For deployment, MongoDB Atlas ensures data persists across deployments
+
+## Submission Links
+
+- GitHub Repo: https://github.com/INCREDIBLE18/Ai_review
+- User Dashboard: https://ai-feedback-system-lavl.onrender.com/
+- Admin Dashboard: https://ai-feedback-system-lavl.onrender.com/admin
 
 ## License
 
